@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Player</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #skull {
+            font-size: 50px; 
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        #skull:hover {
+            color: #2980b9; 
+        }
+
+        #videoContainer {
+            transform: rotate(270deg);
+        }
+
+        video {
+            width: 360px;
+            height: 640px;
+        }
+    </style>
+</head>
+<body>
+    <div id="skull" onclick="playVideo()">
+        &#128128;
+    </div>
+    <div id="videoContainer" style="display: none;"> 
+        <video id="myVideo">
+            <source src="Download.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <script>
+        function playVideo() {
+            var videoContainer = document.getElementById("videoContainer");
+            var skull = document.getElementById("skull");
+            var video = document.getElementById("myVideo");
+
+            videoContainer.style.display = "block";
+            skull.style.display = "none";
+            video.play(); 
+        }
+    </script>
+</body>
+</html>
